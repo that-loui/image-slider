@@ -16,35 +16,36 @@ function startSlide(){
 
 function nextSlide(){
     reset()
-    
     slides[current + 1].style.display = 'block';
     current ++;
+    console.log(current)
 
+//     if(current === slides.length){
+//         current = 0
+//     }
+}
+
+next.addEventListener('click' , () =>{
     if(current === slides.length - 1){
         current = -1; 
         console.log(current);
     }
-    // console.log(current)
-}
-
-next.addEventListener('click' , () =>{
+   console.log(current)
     nextSlide()
 })
 
 
 function prevSlide(){
     reset()
-    
     slides[current - 1].style.display = 'block';
     current --;
-    
-    if(current  === 0){
-        current = slides.length ;
-    }
 }
 
 prev.addEventListener('click' , () => {
-       prevSlide();
+    if(current  === 0){
+        current = slides.length ;
+    }
+    prevSlide();
 })
 // console.log(slides.length)
-startSlide(slides)
+startSlide()
